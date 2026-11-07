@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+.menu {
+  background-color: #0066aa;
+  color: #ffffff;
+  border: 3px solid #ff0000;
+  padding: 20px 10px;
+  text-align: center;
+  height: 100%;
+}

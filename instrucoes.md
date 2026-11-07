@@ -408,3 +408,10 @@ npx ng g s veiculo
 npx ng g d destaque
 npx ng g p moeda
 ```
+
+
+npx ng g c website
+npx ng g c website/cabecalho
+npx ng g c website/menu
+npx ng g c website/conteudo
+npx ng g c website/rodape

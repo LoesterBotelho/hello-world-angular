@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.layout-container {
+  background-color: #cdf0ff;
+  padding: 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.corpo-layout {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+}
+
+.area-menu {
+  width: 200px;
+}
+
+.area-conteudo {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .corpo-layout {
+    flex-direction: column;
+  }
+
+  .area-menu {
+    width: 100%;
+  }
+}
