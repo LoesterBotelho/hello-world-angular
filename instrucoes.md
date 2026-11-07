@@ -9,6 +9,20 @@ node -v
 npm -v
 ```
 
+### Atualizar o npm
+
+Instalar uma versão específica do npm globalmente:
+
+```bash
+npm install -g npm@12.2.2
+```
+
+Verificar a versão instalada:
+
+```bash
+npm -v
+```
+
 ---
 
 ## 2. Instalação do Angular CLI
@@ -101,11 +115,11 @@ app.component.spec.ts
 
 ### Vitest
 
-O projeto Angular pode utilizar **Vitest** para execução dos testes.
+Projetos Angular podem utilizar **Vitest** para execução dos testes.
 
 ---
 
-## 7. npm scripts
+## 7. npm Scripts
 
 Executar um script definido no `package.json`:
 
@@ -113,7 +127,7 @@ Executar um script definido no `package.json`:
 npm run watch
 ```
 
-Exemplo de utilização:
+Exemplo:
 
 ```json
 {
@@ -129,7 +143,7 @@ Nesse caso:
 npm run watch
 ```
 
-é equivalente a executar:
+é equivalente a:
 
 ```bash
 npx ng build --watch --configuration development
@@ -142,16 +156,20 @@ npx ng build --watch --configuration development
 Gerar um componente:
 
 ```bash
-npx ng g c componente-filho-1
+npx ng g c exemplo
 ```
 
-Ou:
+Ou utilizando o comando completo:
 
 ```bash
-npx ng generate component componente-filho-1
+npx ng generate component exemplo
 ```
 
-Gerar outro componente:
+### Gerar componentes específicos
+
+```bash
+npx ng g c componente-filho-1
+```
 
 ```bash
 npx ng g c componente-filho-2
@@ -169,9 +187,70 @@ Significa:
 ng generate component
 ```
 
+### Exemplos
+
+```bash
+npx ng g c exemplo
+npx ng g c componente-filho-1
+npx ng g c componente-filho-2
+```
+
 ---
 
-# 9. VS Code
+# 9. Gerar interfaces
+
+Gerar uma interface utilizando o Angular CLI:
+
+```bash
+npx ng g i veiculo
+```
+
+Ou utilizando o comando completo:
+
+```bash
+npx ng generate interface veiculo
+```
+
+O comando normalmente cria:
+
+```text
+veiculo.ts
+```
+
+### Exemplo de interface
+
+```typescript
+export interface Veiculo {
+  id: number;
+  marca: string;
+  modelo: string;
+  ano: number;
+}
+```
+
+### Abreviações do Angular CLI
+
+```text
+ng g i
+```
+
+Significa:
+
+```text
+ng generate interface
+```
+
+### Exemplos
+
+```bash
+npx ng g i veiculo
+npx ng g i usuario
+npx ng g i produto
+```
+
+---
+
+# 10. VS Code
 
 ## Angular Language Service
 
@@ -190,7 +269,7 @@ Ela fornece recursos para desenvolvimento Angular, como:
 
 ---
 
-# 10. Arquivo `styles.css`
+# 11. Arquivo `styles.css`
 
 O arquivo:
 
@@ -198,15 +277,15 @@ O arquivo:
 src/styles.css
 ```
 
-é utilizado para definir **CSS global da aplicação**.
+é utilizado para definir o **CSS global da aplicação**.
 
-Ou seja, estilos definidos nele podem ser aplicados em todo o site.
+Ou seja, estilos definidos nele podem ser aplicados em toda a aplicação.
 
 ### Exemplo
 
 ```css
 body {
-    margin: 0;
+  margin: 0;
 }
 ```
 
@@ -220,9 +299,9 @@ Exemplo simples:
 
 ```css
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 ```
 
@@ -230,7 +309,7 @@ Um dos objetivos é evitar que elementos HTML tenham margens e espaçamentos pad
 
 ---
 
-# 11. `main.ts`
+# 12. `main.ts`
 
 Arquivo:
 
@@ -246,7 +325,7 @@ Em projetos Angular modernos, normalmente **não é necessário alterar esse arq
 
 ---
 
-# 12. Estrutura básica
+# 13. Estrutura básica
 
 Uma estrutura simplificada pode ser:
 
@@ -283,17 +362,49 @@ hello-world/
 
 ---
 
-# 13. Resumo dos principais comandos
+# 14. Resumo dos principais comandos
 
 | Comando | Função |
 |---|---|
 | `node -v` | Verifica a versão do Node.js |
 | `npm -v` | Verifica a versão do npm |
-| `npm install -g @angular/cli@22` | Instala Angular CLI 22 |
+| `npm install -g npm@12.2.2` | Instala o npm 12.2.2 globalmente |
+| `npm install -g @angular/cli@22` | Instala o Angular CLI 22 |
+| `ng version` | Exibe as versões do Angular CLI e do ambiente |
 | `npx ng new hello-world` | Cria um projeto Angular |
 | `npx ng serve` | Executa o servidor de desenvolvimento |
 | `npx ng build` | Gera o build |
 | `npx ng test` | Executa os testes |
 | `npm run watch` | Executa o script `watch` do `package.json` |
 | `npx ng build --watch --configuration development` | Build contínuo em desenvolvimento |
-| `npx ng g c nome` | Gera um componente |
+| `npx ng g c exemplo` | Gera um componente |
+| `npx ng g c nome` | Gera um componente com o nome informado |
+| `npx ng g i veiculo` | Gera uma interface |
+| `npx ng generate component exemplo` | Gera um componente usando o comando completo |
+| `npx ng generate interface veiculo` | Gera uma interface usando o comando completo |
+
+---
+
+# 15. Atalhos do Angular CLI
+
+O Angular CLI possui abreviações para facilitar os comandos.
+
+| Abreviação | Comando completo | Finalidade |
+|---|---|---|
+| `ng g c` | `ng generate component` | Gerar componente |
+| `ng g i` | `ng generate interface` | Gerar interface |
+| `ng g s` | `ng generate service` | Gerar service |
+| `ng g d` | `ng generate directive` | Gerar diretiva |
+| `ng g p` | `ng generate pipe` | Gerar pipe |
+| `ng g guard` | `ng generate guard` | Gerar guard |
+| `ng g class` | `ng generate class` | Gerar classe |
+
+### Exemplos
+
+```bash
+npx ng g c exemplo
+npx ng g i veiculo
+npx ng g s veiculo
+npx ng g d destaque
+npx ng g p moeda
+```

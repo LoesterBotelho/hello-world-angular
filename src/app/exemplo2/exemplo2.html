@@ -1,0 +1,44 @@
+<button
+  [class.botao-desabilitado]="botaoDesabilitado"
+  [class.botao-habilitado]="!botaoDesabilitado"
+  [disabled]="botaoDesabilitado">
+  Clique aqui
+</button>
+
+<button (click)="mudarEstadoBotao()">Mudar estado do botão</button>
+
+<p>O botão está {{ botaoDesabilitado ? 'Desabilitado' : 'Habilitado' }}</p>
+
+<hr />
+
+<!-- Two-way Data Binding com ngModel -->
+<input [(ngModel)]="texto" placeholder="Digite algo...">
+<p>Texto do input: {{ texto }}</p>
+
+<hr />
+
+<!-- Estrutura condicional @if / @else para Nota -->
+@if (nota == 10) {
+  <p>Aprovado com nota 10!</p>
+} @else if (nota >= 7) {
+  <p>Aprovado</p>
+} @else {
+  <p>Reprovado</p>
+}
+
+<hr />
+
+<!-- Estrutura condicional @if / @else para Função do Utilizador -->
+@if (userRole === 'admin') {
+  <h2>Painel de Administrador</h2>
+  <p>Você tem acesso total ao sistema.</p>
+} @else if (userRole === 'editor') {
+  <h2>Painel de Editor</h2>
+  <p>Você pode editar conteúdos.</p>
+} @else if (userRole === 'viewer') {
+  <h2>Modo Visualização</h2>
+  <p>Você só pode visualizar conteúdos.</p>
+} @else {
+  <h2>Acesso desconhecido</h2>
+  <p>Entre em contato com o suporte.</p>
+}
