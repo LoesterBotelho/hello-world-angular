@@ -11,12 +11,12 @@ import { Veiculo } from './../veiculo';
 export class Exemplo {
 
   // Dados do produto
-  nomeProduto: string = 'Fone sem fio';
-  preco: number = 250.99;
-  quantidadeEstoque: number = 100;
+  private nomeProduto: string = 'Fone sem fio';
+  private preco: number = 250.99;
+  private quantidadeEstoque: number = 100;
 
   // Objeto utilizando a Interface Veiculo
-  v1: Veiculo = {
+  private v1: Veiculo = {
     marca: 'Honda',
     modelo: 'Civic',
     placa: 'AAA1A11',
@@ -25,7 +25,7 @@ export class Exemplo {
   };
 
   // Método do clique
-  registrarClick(): void {
+  private registrarClick(): void {
     alert('O botão foi clicado');
   }
 

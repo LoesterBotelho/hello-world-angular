@@ -9,16 +9,16 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './exemplo2.css',
 })
 export class Exemplo2 {
-  botaoDesabilitado: boolean = true;
+  private botaoDesabilitado: boolean = true;
 
-  mudarEstadoBotao(): void {
+  private mudarEstadoBotao(): void {
     this.botaoDesabilitado = !this.botaoDesabilitado;
   }
 
-  texto: string = '';
+  private texto: string = '';
 
-  nota: number = 10;
-  userRole: string = 'admin';
+  private nota: number = 10;
+  private userRole: string = 'admin';
 
   private id = 1;
   public readonly arrayDeValores = [1, 2, 3];
