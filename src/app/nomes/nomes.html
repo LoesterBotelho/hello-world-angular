@@ -1,0 +1,17 @@
+<input
+  type="text"
+  placeholder="Digite um nome"
+  [(ngModel)]="nome"
+>
+
+<button (click)="adicionarNome()">
+  Adicionar
+</button>
+
+<br><br>
+
+<ul>
+  @for (nome of nomes; track nome) {
+    <li>{{ nome }}</li>
+  }
+</ul>
