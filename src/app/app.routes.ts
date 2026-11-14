@@ -12,10 +12,9 @@ import { ComponenteFilho2 } from './componente-filho-2/componente-filho-2';
 import { Exemplo } from './exemplo/exemplo';
 import { Exemplo2 } from './exemplo2/exemplo2';
 import { Website } from './website/website';
+import {NaoEncontrado} from './nao-encontrado/nao-encontrado';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'hello-world', pathMatch: 'full' },
-
   { path: 'nomes', component: Nomes },
   { path: 'imagem', component: Imagem },
   { path: 'autenticacao', component: Autenticacao },
@@ -28,6 +27,8 @@ export const routes: Routes = [
   { path: 'exemplo', component: Exemplo },
   { path: 'exemplo2', component: Exemplo2 },
   { path: 'website', component: Website },
+    { path: 'nao-encontrado', component: NaoEncontrado },
 
-  { path: '**', redirectTo: 'hello-world' }
+  { path: '', redirectTo: 'hello-world', pathMatch: 'full' },
+  { path: '**', redirectTo: 'nao-encontrado' }
 ];
