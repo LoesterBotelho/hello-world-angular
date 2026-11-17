@@ -1,0 +1,18 @@
+<button 
+  [disabled]="botaoDesabilitado"
+  [class.botao-desabilitado]="botaoDesabilitado"
+  [class.botao-habilitado]="!botaoDesabilitado"
+  (click)="mostrarMensagem()">
+  Clique aqui
+</button>
+
+<br><br>
+
+<button (click)="ativarBotao()" >Habilitar</button>
+
+<br><br>
+
+<input type="text" [(ngModel)]="texto">
+<p>{{texto}}</p>
+
+<!-- <p (mouseover)="passarPorCima()">Passe o mouse</p> -->

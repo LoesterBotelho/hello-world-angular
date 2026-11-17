@@ -13,6 +13,9 @@ import { Exemplo } from './exemplo/exemplo';
 import { Exemplo2 } from './exemplo2/exemplo2';
 import { Website } from './website/website';
 import {NaoEncontrado} from './nao-encontrado/nao-encontrado';
+import { ExemploEventBinding } from './exemplo-event-binding/exemplo-event-binding';
+import { Login } from './login/login';
+import { RecaptchaFake } from './recaptcha-fake/recaptcha-fake';
 
 export const routes: Routes = [
   { path: 'nomes', component: Nomes },
@@ -27,7 +30,11 @@ export const routes: Routes = [
   { path: 'exemplo', component: Exemplo },
   { path: 'exemplo2', component: Exemplo2 },
   { path: 'website', component: Website },
-    { path: 'nao-encontrado', component: NaoEncontrado },
+  { path: 'exemplo-event-binding', component: ExemploEventBinding },
+  { path: 'login', component: Login },
+    { path: 'recaptcha', component: RecaptchaFake },
+  { path: 'nao-encontrado', component: NaoEncontrado },
+
 
   { path: '', redirectTo: 'hello-world', pathMatch: 'full' },
   { path: '**', redirectTo: 'nao-encontrado' }

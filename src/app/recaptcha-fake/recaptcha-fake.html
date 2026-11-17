@@ -1,0 +1,54 @@
+<div class="recaptcha">
+
+  <div class="recaptcha-cabecalho">
+    <div class="logo">✓</div>
+
+    <div>
+      <strong>Verificação</strong>
+      <span>Confirme que você não é um robô</span>
+    </div>
+  </div>
+
+  @if (!verificado) {
+
+    <div class="desafio">
+
+      <p class="instrucao">
+        Clique na caixa abaixo para continuar
+      </p>
+
+      <div class="area-jogo">
+
+        <button
+          class="botao-verificacao"
+          [style.left.px]="posicaoX"
+          [style.top.px]="posicaoY"
+          (mouseenter)="passarPerto()"
+          (click)="verificar()"
+        >
+          <span class="checkbox"></span>
+          Não sou um robô
+        </button>
+
+      </div>
+
+      <div class="tempo">
+        Desafio expira em <strong>{{ segundos }}s</strong>
+      </div>
+
+    </div>
+
+  } @else {
+
+    <div class="sucesso">
+      <div class="sucesso-icone">✓</div>
+
+      <div>
+        <strong>Verificado</strong>
+        <span>Você passou na verificação.</span>
+      </div>
+    </div>
+
+  }
+
+</div>
