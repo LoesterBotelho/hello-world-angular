@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -8,18 +8,18 @@ import { Component } from '@angular/core';
 })
 export class Contador {
 
-   contador: number = 0;
+  private contador = signal<number>(0);
 
   incrementar(): void {
-    if (this.contador === 10) {
-      this.contador = 0;
+    if (this.contador() === 10) {
+      this.zerar();
     } else {
-      this.contador++;
+      this.contador.update(valorAtual => valorAtual + 1);
     }
   }
 
   zerar(): void {
-    this.contador = 0;
+    this.contador.set(0);
   }
   
 }
